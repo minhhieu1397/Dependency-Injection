@@ -5,8 +5,11 @@
 - Các phụ thuộc sẽ được truyền vào 1 class thông qua constructor của class đó :
 
 	public function __construct(TimesheetRepository $timesheetRepository)
+
 	    {
+
 	        $this->timesheetRepository = $timesheetRepository;
+            
 	    }
 - Hàm này ta truyền phụ thuộc TimesheetRepository vào trong class TimesheetService thông qua constructor của class TimesheetService
 - Trong các phụ thuộc đều có function construct để truyền phụ thuộc. Do sử dụng constructor injection: các biến phụ thuộc được cung cấp thông qua một hàm tạo lớp.
