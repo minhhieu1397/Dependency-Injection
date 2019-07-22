@@ -11,33 +11,51 @@
 - Trong các phụ thuộc đều có function construct để truyền phụ thuộc. Do sử dụng constructor injection: các biến phụ thuộc được cung cấp thông qua một hàm tạo lớp.
 - Ở trong Timesheet có 3 phụ thuộc TimesheetController->TimesheetService ở trong TimesheetController gọi đến thằng TimesheetService
 public function __construct(TimesheetService $timesheetService)
+
     {
+
         $this->timesheetService = $timesheetService;
+
     }
 - TimesheetService->TimesheetRepository, thằng TimesheetService gọi đến thằng TimesheetRepository:
 	public function __construct(TimesheetRepository $timesheetRepository)
+
     {
+
         $this->timesheetRepository = $timesheetRepository;
+
     }
 - TimesheetRepository  làm việc với Model để xử lí dữ liệu. Xong trả kết quả về thằng Controller:
 	public function __construct(Timesheet $model)
+
     {
+
         $this->model = $model;
+
     }
 - Sử dụng:  
 	public function index() // trong TimesheetController
+
     {
+
         $timesheets = $this->timesheetService->index();// Thằng $timesheet bằng kết quả trả về thằng index trong timesheetService
      
         return view('timesheet.view', ['timesheets' => $timesheets]);
+
     }
 
     public function index() // Trong timesheetService
+
 	{
+
 		return $this->timesheetRepository->all(); // Hàm này sẽ trả về kết quả thằng all trong timesheetRepository
+
 	}
 
 	public function all() // Trong timesheetRepository
+
     {
+
     	return $this->model->all(); // Thằng này trả về kết quả  trong model Timesheet lấy ra toàn bộ dữ liệu trong bảng Timesheet
+        
     }
