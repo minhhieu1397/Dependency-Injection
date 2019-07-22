@@ -1,4 +1,4 @@
-##Dependency injection
+## Dependency injection
 - Dependency injection (DI) là một kỹ thuật lập trình giúp tách một class độc lập với các biến phụ thuộc.
 - Các class sẽ không phụ thuộc trực tiếp lẫn nhau mà thay vào đó chúng sẽ liên kết với nhau.
 - Nhiệm vụ DI Tạo các đối tượng, hiểu lớp nào sẽ cần những đối tượng nào, cung cấp cho lớp đó toàn bộ các đối tượng đó. Nếu có thay đổi với đối tượng ta sẽ không cần quan tâm đến các class sử dụng đối tượng đó, mà ta chỉ cần quan tâm đến sự thay đổi của đối tượng đó thôi.
